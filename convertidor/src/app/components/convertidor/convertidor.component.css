@@ -1,0 +1,9 @@
+label:first-child{
+  font-size: 22px;
+  font-weight: 500;
+}
+
+h5 span{
+  margin: 0px 5px;
+  font-size: 150%;
+}

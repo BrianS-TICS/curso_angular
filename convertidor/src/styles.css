@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(./assets/dolar.jpg) ;
+  /* background-image: url(./assets/dolar.jpg); */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
