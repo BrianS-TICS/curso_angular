@@ -1,0 +1,8 @@
+<div class="p-5 mb-5 bg-ligero rounded-3 text-center">
+  <button (click)="tirarDados()" class="btn btn-success btn-lg">Tirar dados</button>
+  <br>
+  <img class="img" [src]="dadoIzquierda" alt="">
+  <img class="img" [src]="dadoDerecha" alt="">
+  <br>
+  <p *ngIf="ganador" class="badge bg-primary text-wrap text-uppercase fs-1"><strong>¡Ganaste!</strong></p>
+</div>
