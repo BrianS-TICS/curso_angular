@@ -1,0 +1,31 @@
+.list-group-item{
+  padding: 2rem 0;
+  cursor: pointer;
+}
+
+.list-group{
+  padding: 0;
+}
+
+.list-group-item:active{
+  opacity: 0.8;
+}
+
+
+.col-lg-5{
+  padding: 0;
+}
+
+main h1{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: -20rem;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
