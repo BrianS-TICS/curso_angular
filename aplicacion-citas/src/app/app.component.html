@@ -1,0 +1,21 @@
+<div class="container card p-3 pt-0">
+  <div class="text-center pt-5 card-body">
+    <h1 class="titulo-class">Aplicacion de citas</h1>
+    <div class="row text-center mt-3">
+      <div class="col-lg-6">
+        <app-crear-citas
+          (nuevaCita)="agregarCita($event)"
+          >
+        </app-crear-citas>
+      </div>
+      <div class="col-lg-6">
+        <app-list-citas
+          (deleteCita)="eliminarCitaList($event)"
+          [listadoCitas]="listCitas"
+        >
+
+        </app-list-citas>
+      </div>
+    </div>
+  </div>
+</div>

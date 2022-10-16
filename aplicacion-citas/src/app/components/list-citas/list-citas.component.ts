@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-list-citas',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCitasComponent implements OnInit {
 
+  @Input() listadoCitas: any;
+  @Output() deleteCita = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  eliminarCita(indice : number){
+    this.deleteCita.emit(indice);
+  }
 }

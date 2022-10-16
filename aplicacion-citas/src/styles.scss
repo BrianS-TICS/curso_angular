@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  padding: 20px;
+  background-image: linear-gradient(#4b88a280, #bb0a226d), url("./assets/img/cita.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  font-family: 'Oswald', sans-serif;
+}
+
+.titulo-class{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+

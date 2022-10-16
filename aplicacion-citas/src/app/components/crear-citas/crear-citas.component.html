@@ -1,1 +1,29 @@
-<p>crear-citas works!</p>
+<div action="" class="form-grou rounded-3">
+  <h3>Crear cita</h3>
+  <div *ngIf="formularioError" class="alert alert-danger mb-2" role="alert">
+    Todos los campos son obligatorios
+  </div>
+  <div *ngIf="agendaCorrecta" class="alert alert-success mb-2" role="alert">
+    Agendado correctamente
+  </div>
+  <div class="flex-start-cols">
+    <label for="nombre" class="">Nombre</label>
+    <input [(ngModel)]="nombre" id="nombre" type="text" class="form-control" placeholder="Ingresa tu nombre">
+  </div>
+  <div class="flex-start-cols">
+    <label for="fecha" class="">Fecha</label>
+    <input [(ngModel)]="fecha" id="fecha" type="date" class="form-control" placeholder="Ingresa la fecha">
+  </div>
+  <div class="flex-start-cols">
+    <label for="hora" class="">Hora</label>
+    <input [(ngModel)]="hora" id="hora" type="time" class="form-control">
+  </div>
+  <div class="flex-start-cols">
+    <label for="sintomas" class="">Sintomas</label>
+    <textarea [(ngModel)]="sintomas" class="form-control" placeholder="Escribe los sintomas aqui"
+      id="sintomas"></textarea>
+  </div>
+  <button (click)="agendaCita()" class="btn btn-primary w-100 text-uppercase">
+    Agregar cita
+  </button>
+</div>
