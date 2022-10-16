@@ -1,1 +1,21 @@
-<p>resultado works!</p>
+<div class="row w-100">
+  <div class="col-lg-4 offset-lg-4">
+    <h2 class="titulo text-center mt-5">Resultado</h2>
+    <div class="mt-4 row w-100">
+      <div class="col-lg-12">
+        <div class="fondo-item">
+          <p class="resultado">{{resultado}}</p>
+          <p class="estilo-numero">{{bmi}}</p>
+          <p class="interpretacion">{{interpretacion}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <button routerLink="/" class="mt-4 py-3 btn btn-primary w-100 fw-bold fs-5 text-uppercase">
+          Recalcular
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
