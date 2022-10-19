@@ -1,0 +1,16 @@
+input[type="radio"]{
+  width: 25px;
+  height: 25px;
+}
+
+label{
+  font-size: 20px;
+}
+
+.alineacion-centrada{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}

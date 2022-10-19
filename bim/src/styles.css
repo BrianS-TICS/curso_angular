@@ -6,6 +6,7 @@ body{
 .titulo{
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
+  color: white;
 }
 
 .row{

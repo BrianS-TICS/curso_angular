@@ -1,0 +1,18 @@
+<h3 *ngIf="listadoCitas.length > 0">Listado de citas</h3>
+<h3 *ngIf="listadoCitas.length === 0">No hay citas</h3>
+
+<ol  class="list-group list-group-numbered">
+  <li *ngFor="let cita of listadoCitas; let i = index;" class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold text-start">{{cita.nombre}}</div>
+      <div>{{cita.sintomas}}</div>
+    </div>
+    <div class="li-data-icon mx-1">
+      <span class="badge bg-secondary rounded-pill">{{cita.hora}}</span>
+    </div>
+    <div class="li-data-icon">
+      <span class="badge bg-primary rounded-pill">{{cita.fecha}}</span>
+      <span class="badge bg-danger borrar" (click)="eliminarCita(i)">Eliminar</span>
+    </div>
+  </li>
+</ol>

@@ -3,7 +3,6 @@
   height: 150px;
   border-radius: 10px;
   color: white;
-  font-size: 60px;
 
   display: flex;
   flex-direction: column;
@@ -12,8 +11,41 @@
   row-gap: 5px;
 }
 
+.fondo-item span{
+  font-size: 60px;
+}
+
 .fondo-item p{
   font-size: 20px;
   margin: 0;
   font-weight: 900;
+}
+
+.fondo-item .estilo-numero{
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: -15px;
+}
+
+.form-range{
+  padding: 0 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  background-color: #FF3366;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover{
+  background-color: #ff0040;
+}
+
+.boton-cantidad{
+  cursor: pointer;
+  padding: 9px 10px;
+  border-radius: 100%;
+  background-color: #ff0040;
+}
+
+.sexoDesactivo{
+  background-color: #7D2F2F33
 }
