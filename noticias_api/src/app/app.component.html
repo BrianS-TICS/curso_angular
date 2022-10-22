@@ -1,0 +1,9 @@
+<app-navbar [titulo]="'Buscador de noticias'"></app-navbar>
+
+<section class="container mt-5">
+  <app-form-busqueda (parametrosSeleccionados)="buscarNoticias($event)"></app-form-busqueda>
+</section>
+
+<main class="container mt-4">
+  <app-listado-noticias [listNoticias]="listNoticias"></app-listado-noticias>
+</main>

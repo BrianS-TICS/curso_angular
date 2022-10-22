@@ -1,0 +1,21 @@
+<div class="row w-100% p-3 gap-2 justify-content-center">
+  <div *ngFor="let noticia of listNoticias" class="col-5">
+    <div class="card mb-3">
+      <h3 class="card-header mt-3">{{noticia.title}}</h3>
+      <div class="card-body">
+        <h5 class="card-title">{{noticia.author}}</h5>
+        <h6 class="card-subtitle text-muted">Fuente: {{noticia.source.name}}</h6>
+      </div>
+      <img [src]="noticia.urlToImage" alt="">
+      <div class="card-body">
+        <p class="card-text">{{noticia.description}}</p>
+      </div>
+      <div class="card-body">
+        <a [href]="noticia.url" class="card-link">Leer nota</a>
+      </div>
+      <div class="card-footer text-muted">
+        {{noticia.publishedAt}}
+      </div>
+    </div>
+  </div>
+</div>

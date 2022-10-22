@@ -1,0 +1,33 @@
+<form (ngSubmit)="consultaNoticias" class="card p-3">
+  <div class="border-primary" style="max-width: 100%;">
+    <div class="card border-dark mb-3" style="max-width: 100%;">
+      <div class="card-header text-uppercase text-center" style="font-size: 2rem;">Busca una noticia</div>
+      <div class="card-body pb-0">
+        <h4 class="card-title">Filtra las noticias por pais y categoria</h4>
+        <p class="card-text">Noticias recientes de paises como mexico, colombia, estados unidos...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-4">
+    <div class="form-group">
+      <label for="pais" class="form-label d-block">Pais</label>
+      <select name="pais" [(ngModel)]="paisSeleccionado" class="form-select w-100 p-2">
+        <option *ngFor="let pais of paises" [value]="pais.value">{{pais.nombre}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="categoria" class="form-label d-block">Categoria</label>
+      <select name="categoria" [(ngModel)]="categoriaSeleccionada" class="form-select w-100 p-2">
+        <option *ngFor="let categoria of categorias" [value]="categoria.value">{{categoria.nombre}}</option>
+      </select>
+    </div>
+
+    <div class="row w-100 justify-content-end m-0">
+      <button type="submit" (click)="consultaNoticias()" type="submit"
+        class="btn btn-primary w-100 text-uppercase">Buscar
+      </button>
+    </div>
+  </div>
+</form>
