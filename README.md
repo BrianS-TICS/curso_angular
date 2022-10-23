@@ -1,7 +1,7 @@
 # Proyectos desarrollados en angular 
 
 ## 🛠 Skills
-                             Angular, SCSS, Firebase
+                                                               Angular, SCSS, Firebase
 ## 🔗 Links
 
 
