@@ -8,17 +8,24 @@ import { NoticiaService } from './services/noticia.service';
 })
 export class AppComponent {
 
-  listNoticias : any [] = [];
+  listNoticias: any[] = [];
+  loading = false;
 
-  constructor(private __noticiaService : NoticiaService){
+  constructor(private __noticiaService: NoticiaService) {
 
   }
 
-  buscarNoticias(parametros : any){
-    this.__noticiaService.getNoticias(parametros).subscribe(data => {
-      this.listNoticias = data.articles;
-    }, error => {
-      console.log(error);
-    });
+  buscarNoticias(parametros: any) {
+    this.listNoticias = [];
+    this.loading = true;
+    setTimeout(() => {
+      this.__noticiaService.getNoticias(parametros).subscribe(data => {
+        this.loading = false;
+        this.listNoticias = data.articles;
+      }, error => {
+        console.log(error);
+        this.loading = false;
+      });
+    }, 1000);
   }
 }
