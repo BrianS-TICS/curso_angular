@@ -11,7 +11,7 @@ export class AppComponent {
     nombre: "Brian",
     fecha: "22-02-2022",
     hora: "12:20 AM",
-    sintomas: "Me estan matando"
+    sintomas: "Dolor de cabeza y fatiga"
   }];
 
   agregarCita(cita: any) {
