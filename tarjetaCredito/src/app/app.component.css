@@ -1,0 +1,18 @@
+main {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  height: 100vh;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.titulo {
+  color: #0094e97a;
+  font-weight: 900;
+}
+
+.centrar-x-y {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

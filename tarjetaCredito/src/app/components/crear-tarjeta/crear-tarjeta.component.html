@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="mb-3">Crear tarjeta</h5>
+    <form [formGroup]="form" class="my-2" (ngSubmit)="crearTarjeta()">
+      <div class="input-group input-group-lg mb-3">
+        <span class="input-group-text" >
+          <i class="fa-solid fa-circle-user"
+              [class.green-icon]="this.form.get('titular')?.valid"
+          ></i>
+        </span>
+        <input type="text" formControlName="titular" maxlength="50" class="form-control" placeholder="Titular">
+      </div>
+      <div class="input-group input-group-lg mb-3">
+        <span class="input-group-text" >
+          <i class="fa-solid fa-credit-card"
+            [class.green-icon]="this.form.get('numeroTarjeta')?.valid"
+          ></i>
+        </span>
+        <input type="text" formControlName="numeroTarjeta" maxlength="16" class="form-control" placeholder="Numero tarjeta">
+      </div>
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="input-group input-group-lg mb-3">
+            <span class="input-group-text" >
+              <i class="fa-solid fa-calendar-days"
+                [class.green-icon]="this.form.get('fechaExpiracion')?.valid"
+              ></i>
+            </span>
+            <input type="text" formControlName="fechaExpiracion" maxlength="5" class="form-control" placeholder="Fecha de expiracion">
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="input-group input-group-lg mb-3">
+            <span class="input-group-text" >
+              <i class="fa-solid fa-key"
+                [class.green-icon]="this.form.get('cvc')?.valid"
+
+              ></i>
+            </span>
+            <input type="password" formControlName="cvc" maxlength="3" class="form-control" placeholder="CVC">
+          </div>
+        </div>
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary text-uppercase py-3 d-flex gap-2 justify-content-center align-content-center">
+          Aceptar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
