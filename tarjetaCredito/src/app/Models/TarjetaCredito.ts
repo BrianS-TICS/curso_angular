@@ -3,15 +3,15 @@ export default class TarjetaCredito{
   titular : string;
   numeroTarjeta : string;
   fechaExpiracion : string;
-  cvv: number;
+  cvc: number;
   fechaCreacion : Date;
   fechaActualizacion : Date;
 
-  constructor(titular : string, numeroTarjeta: string, fechaExpiracion : string, cvv: number){
+  constructor(titular : string, numeroTarjeta: string, fechaExpiracion : string, cvc: number){
     this.titular = titular;
     this.numeroTarjeta = numeroTarjeta;
     this.fechaExpiracion = fechaExpiracion;
-    this.cvv = cvv;
+    this.cvc = cvc;
 
     this.fechaCreacion = new Date();
     this.fechaActualizacion = new Date();

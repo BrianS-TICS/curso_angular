@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyAlb9Zomle27eEH8H-sgrQHChecfBUYGCY",
+    authDomain: "tarjetadecredito-ce94e.firebaseapp.com",
+    projectId: "tarjetadecredito-ce94e",
+    storageBucket: "tarjetadecredito-ce94e.appspot.com",
+    messagingSenderId: "539698573623",
+    appId: "1:539698573623:web:1454ff26258dd8da22eab2"
+  }
 };
 
 /*
@@ -14,3 +22,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+

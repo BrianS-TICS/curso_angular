@@ -6,3 +6,8 @@ h1,h2,h3,h4,h5{
 .green-icon{
   color: #198754;
 }
+
+
+.red-icon{
+  color: rgba(205, 15, 15, 0.814);
+}

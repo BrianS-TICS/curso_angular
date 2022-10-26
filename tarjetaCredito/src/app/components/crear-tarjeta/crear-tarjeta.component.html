@@ -6,6 +6,8 @@
         <span class="input-group-text" >
           <i class="fa-solid fa-circle-user"
               [class.green-icon]="this.form.get('titular')?.valid"
+              [class.red-icon]="this.form.get('titular')?.invalid && this.form.get('cvc')?.touched"
+
           ></i>
         </span>
         <input type="text" formControlName="titular" maxlength="50" class="form-control" placeholder="Titular">
@@ -14,6 +16,8 @@
         <span class="input-group-text" >
           <i class="fa-solid fa-credit-card"
             [class.green-icon]="this.form.get('numeroTarjeta')?.valid"
+            [class.red-icon]="this.form.get('numeroTarjeta')?.invalid && this.form.get('cvc')?.touched"
+
           ></i>
         </span>
         <input type="text" formControlName="numeroTarjeta" maxlength="16" class="form-control" placeholder="Numero tarjeta">
@@ -24,6 +28,8 @@
             <span class="input-group-text" >
               <i class="fa-solid fa-calendar-days"
                 [class.green-icon]="this.form.get('fechaExpiracion')?.valid"
+                [class.red-icon]="this.form.get('fechaExpiracion')?.invalid && this.form.get('cvc')?.touched"
+
               ></i>
             </span>
             <input type="text" formControlName="fechaExpiracion" maxlength="5" class="form-control" placeholder="Fecha de expiracion">
@@ -34,6 +40,7 @@
             <span class="input-group-text" >
               <i class="fa-solid fa-key"
                 [class.green-icon]="this.form.get('cvc')?.valid"
+                [class.red-icon]="this.form.get('cvc')?.invalid && this.form.get('cvc')?.touched"
 
               ></i>
             </span>
@@ -42,7 +49,7 @@
         </div>
       </div>
       <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-primary text-uppercase py-3 d-flex gap-2 justify-content-center align-content-center">
+        <button [disabled]="form.invalid" type="submit" class="btn btn-primary text-uppercase py-3 d-flex gap-2 justify-content-center align-content-center">
           Aceptar
         </button>
       </div>
