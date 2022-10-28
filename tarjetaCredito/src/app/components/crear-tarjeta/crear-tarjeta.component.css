@@ -11,3 +11,8 @@ h1,h2,h3,h4,h5{
 .red-icon{
   color: rgba(205, 15, 15, 0.814);
 }
+
+.spinner-border{
+  height: 1.5rem;
+  width: 1.5rem;
+}

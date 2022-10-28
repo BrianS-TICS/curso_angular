@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="mb-3">Crear tarjeta</h5>
-    <form [formGroup]="form" class="my-2" (ngSubmit)="crearTarjeta()">
+    <h5 class="mb-3">{{titulo | uppercase}}</h5>
+    <form [formGroup]="form" class="my-2" (ngSubmit)="guardarTarjeta()">
       <div class="input-group input-group-lg mb-3">
         <span class="input-group-text" >
           <i class="fa-solid fa-circle-user"
@@ -41,7 +41,6 @@
               <i class="fa-solid fa-key"
                 [class.green-icon]="this.form.get('cvc')?.valid"
                 [class.red-icon]="this.form.get('cvc')?.invalid && this.form.get('cvc')?.touched"
-
               ></i>
             </span>
             <input type="password" formControlName="cvc" maxlength="3" class="form-control" placeholder="CVC">
@@ -50,7 +49,12 @@
       </div>
       <div class="d-grid gap-2">
         <button [disabled]="form.invalid" type="submit" class="btn btn-primary text-uppercase py-3 d-flex gap-2 justify-content-center align-content-center">
-          Aceptar
+          <span *ngIf="loading" class="spinner-border" role="status">
+            <span class="visually-hidden"></span>
+          </span>
+          <span *ngIf="!loading">
+            Aceptar
+          </span>
         </button>
       </div>
     </form>

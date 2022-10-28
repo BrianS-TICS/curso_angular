@@ -2,13 +2,13 @@
   <div class="card-body">
     <table class="table">
       <tbody>
-        <tr>
-          <td>Brian Sanchez</td>
-          <td>2411111111111</td>
-          <td>23/24</td>
+        <tr *ngFor="let tarjeta of listTarjeta">
+          <td class="oculta-texto-extra"> {{tarjeta.titular}} </td>
+          <td>{{tarjeta.numeroTarjeta}}</td>
+          <td>{{tarjeta.fechaExpiracion}}</td>
           <td class="">
-            <i class="fa-solid fa-pen-to-square btn-editar"></i>
-            <i class="fa-solid fa-circle-minus btn-eliminar"></i>
+            <i  (click)="editarTarjeta(tarjeta)" class="fa-solid fa-pen-to-square btn-editar"></i>
+            <i (click)="eliminarTarjeta(tarjeta.id)" class="fa-solid fa-circle-minus btn-eliminar"></i>
           </td>
         </tr>
       </tbody>

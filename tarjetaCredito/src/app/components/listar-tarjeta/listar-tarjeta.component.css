@@ -1,17 +1,28 @@
-h1,h2,h3,h4,h5{
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0;
   color: #0094e97a;
 }
 
-.btn-eliminar, .btn-editar{
+.btn-eliminar,
+.btn-editar {
   cursor: pointer;
   margin-right: 7px;
 }
 
-.btn-eliminar{
+.btn-eliminar {
   color: rgb(218, 55, 1);
 }
 
-.btn-editar{
+.btn-editar {
   color: rgb(1, 126, 236);
+}
+
+.oculta-texto-extra {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
