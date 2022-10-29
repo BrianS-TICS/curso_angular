@@ -1,0 +1,21 @@
+<div *ngIf="loading" class="alineacion-centro mb-4 ">
+    <app-loading></app-loading>
+</div>
+
+<div *ngIf="!loading" class="row justify-content-center">
+  <div class="card p-0">
+    <div class="card">
+      <img src="https://i.picsum.photos/id/1060/536/354.jpg?blur=2&hmac=0zJLs1ar00sBbW5Ahd_4zA6pgZqCVavwuHToO6VtcYY" alt="">
+    </div>
+    <div class="card-header h4 text-center">
+      {{usuario.name}}
+    </div>
+    <div class="separacion-card-body">
+      <p class="m-0 badge text-bg-danger m-2">Email : {{usuario.email}}</p>
+      <p class="m-0 badge text-bg-danger m-2">Genero : {{usuario.gender}}</p>
+      <span class="badge text-bg-primary m-2">Estatus : {{usuario.status}}</span>
+    </div>
+
+    <a class="btn btn-danger" routerLink="/dashboard">Volver</a>
+  </div>
+</div>

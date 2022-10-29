@@ -11,14 +11,17 @@ export class ListUsuariosComponent implements OnInit {
   constructor(private _usuario_service : UsuarioService) { }
 
   listaUsuarios : any[] = [];
+  loading = true;
   ngOnInit(): void {
     this.consultarUsuario();
   }
 
   consultarUsuario() {
     this._usuario_service.getUsuarios().subscribe(data => {
-      this.listaUsuarios = data;
-      console.log(this.listaUsuarios);
+      setTimeout(() => {
+        this.loading = false;
+        this.listaUsuarios = data;
+      }, 600);
     })
   }
 

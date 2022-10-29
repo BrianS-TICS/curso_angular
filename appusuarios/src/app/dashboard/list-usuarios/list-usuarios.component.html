@@ -1,4 +1,6 @@
-
+<div *ngIf="loading" class="alineacion-centro mb-4">
+  <app-loading></app-loading>
+</div>
 <!--  Se genera cada uno de los usuarios -->
 <div class="row gap-5 justify-content-around  margen-footer">
   <div *ngFor="let usuario of listaUsuarios" class="col-lg-3" >
