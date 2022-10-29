@@ -1,1 +1,7 @@
-<p>list-usuarios works!</p>
+
+<!--  Se genera cada uno de los usuarios -->
+<div class="row gap-5 justify-content-around  margen-footer">
+  <div *ngFor="let usuario of listaUsuarios" class="col-lg-3" >
+    <app-card-usuario [user]="usuario"></app-card-usuario>
+  </div>
+</div>
