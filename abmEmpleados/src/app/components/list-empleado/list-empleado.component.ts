@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatPaginator} from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 import Empleado from 'src/app/models/empleado';
+import { MatDialog } from '@angular/material/dialog';
+import { MensajeConfirmacionComponent } from '../shared/mensaje-confirmacion/mensaje-confirmacion.component';
 
 @Component({
   selector: 'app-list-empleado',
@@ -17,18 +19,16 @@ export class ListEmpleadoComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private  _serviceEmpleado : EmpleadoService) { }
+  constructor(private _serviceEmpleado: EmpleadoService, public dialog: MatDialog) { }
 
-  listaEmpleados : Empleado [] = [];
+  listaEmpleados: Empleado[] = [];
 
   ngOnInit(): void {
     this.consultarEmpleados();
-    this.dataSource = new MatTableDataSource(this.listaEmpleados);
   }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+
   }
 
   applyFilter(event: Event) {
@@ -36,8 +36,29 @@ export class ListEmpleadoComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  consultarEmpleados(){
+  consultarEmpleados() {
     this.listaEmpleados = this._serviceEmpleado.getEmpleados();
+    this.dataSource = new MatTableDataSource(this.listaEmpleados);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
     console.log(this.listaEmpleados);
   }
+
+  eliminarEmpleado(index: number) {
+    const dialogRef = this.dialog.open(MensajeConfirmacionComponent, {
+      width: '350px',
+      data: { mensaje: 'Esta seguro que desea eliminar un empleado?' },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      if (result === 'aceptar') {
+        this._serviceEmpleado.eliminarEmpleado(index);
+        this.consultarEmpleados();
+        this.dataSource = new MatTableDataSource(this.listaEmpleados);
+      }
+    });
+  }
+
+
 }
