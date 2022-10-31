@@ -23,4 +23,8 @@ export class EmpleadoService {
     return this.listaEmpleados.slice();
   }
 
+  eliminarEmpleado(index : number){
+    this.listaEmpleados.splice(index, 1);
+  }
+
 }
