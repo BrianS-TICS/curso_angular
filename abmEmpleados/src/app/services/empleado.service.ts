@@ -27,4 +27,7 @@ export class EmpleadoService {
     this.listaEmpleados.splice(index, 1);
   }
 
+  agregarEmpleado(empleado : Empleado){
+    this.listaEmpleados.unshift(empleado);
+  }
 }

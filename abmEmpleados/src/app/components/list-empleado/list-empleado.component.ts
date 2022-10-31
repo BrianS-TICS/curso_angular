@@ -6,6 +6,7 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
 import Empleado from 'src/app/models/empleado';
 import { MatDialog } from '@angular/material/dialog';
 import { MensajeConfirmacionComponent } from '../shared/mensaje-confirmacion/mensaje-confirmacion.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-list-empleado',
@@ -19,7 +20,8 @@ export class ListEmpleadoComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _serviceEmpleado: EmpleadoService, public dialog: MatDialog) { }
+  constructor(private _serviceEmpleado: EmpleadoService, public dialog: MatDialog,
+    public snackBar: MatSnackBar) { }
 
   listaEmpleados: Empleado[] = [];
 
@@ -56,6 +58,9 @@ export class ListEmpleadoComponent implements OnInit {
         this._serviceEmpleado.eliminarEmpleado(index);
         this.consultarEmpleados();
         this.dataSource = new MatTableDataSource(this.listaEmpleados);
+        this.snackBar.open('El empleado fué eliminado con exito', '', {
+          duration : 30000
+        });
       }
     });
   }

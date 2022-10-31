@@ -8,12 +8,16 @@ table {
   width: 90%;
 }
 
+.pointer{
+  cursor: pointer;
+}
+
+.col-lg-6{
+  padding: 0;
+}
+
 .contenedor{
   display: block;
   width: 90%;
   margin: 30px auto;
-}
-
-.pointer{
-  cursor: pointer;
 }
