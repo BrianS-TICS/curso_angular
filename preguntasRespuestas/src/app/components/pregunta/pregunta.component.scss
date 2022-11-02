@@ -1,0 +1,21 @@
+.list-group-item{
+  cursor: pointer;
+
+  &:hover{
+    background-color: #0dcaf0cf;
+    color: white;
+  }
+  &:focus{
+    background-color: #0dcaf0cf;
+  }
+
+  .correct{
+    color: #da2d2d;
+    font-size: 18px;
+  }
+
+  .incorrect{
+    color: #17a2b8;
+    font-size: 18px;
+  }
+}
