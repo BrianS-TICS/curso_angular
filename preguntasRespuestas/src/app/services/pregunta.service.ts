@@ -7,7 +7,12 @@ import Respuesta from '../models/respuesta';
 })
 export class PreguntaService {
 
+  indexRespuesta = null;
   indexPregunta = 1;
+  opcionSeleccionada ?: any;
+  desahilitarBtn = true;
+  pregConfirmada = false;
+  respuestasUsuario : Array<any> = [];
 
   public preguntas : Pregunta[] = [
     new Pregunta('Cual es la capital de Argentina', [

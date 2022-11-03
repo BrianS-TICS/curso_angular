@@ -1,1 +1,26 @@
-<p>respuesta works!</p>
+<div class="row">
+  <div class="col-lg-12 mx-auto">
+    <h1 class="mb-3 card-title">!Has finalizado las preguntas!</h1>
+    <h2 class="mb-3 card-text fs-4">Este es el resultado del cuestionario</h2>
+    <div class="my-50" *ngFor="let pregunta of listPreguntas; let i = index">
+      <h4 class="card-title">{{ pregunta.descripcionPregunta }}</h4>
+      <ul class="list-group">
+        <ng-container class="my-25" *ngFor="let respuesta of listPreguntas[i].respuestas; let j = index">
+          <li class="list-group-item" [ngClass]="{
+            'list-group-item-success' : respuesta.esCorrecta === 1 && respuestasUsuario[i] === j,
+            'list-group-item-danger' : respuesta.esCorrecta === 0 && respuestasUsuario[i] === j
+          }">
+            {{ respuesta.nombre }}
+            <span *ngIf="respuesta.esCorrecta === 0 && respuestasUsuario[i] === j" class="material-symbols-outlined incorrect">
+              close
+            </span>
+            <span *ngIf="respuesta.esCorrecta === 1 && respuestasUsuario[i] === j" class="material-symbols-outlined correct">
+              check
+            </span>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+    <button (click)="Volver()" class="btn btn-info px-5 text-white text-uppercase fs-6 fw-bold">Volver</button>
+  </div>
+</div>

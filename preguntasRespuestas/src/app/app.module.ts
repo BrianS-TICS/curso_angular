@@ -14,9 +14,9 @@ import { BotoneraComponent } from './components/pregunta/botonera/botonera.compo
     AppComponent,
     DashboardComponent,
     NavbarComponent,
-    PreguntaComponent,
     RespuestaComponent,
-    BotoneraComponent
+    BotoneraComponent,
+    PreguntaComponent
   ],
   imports: [
     BrowserModule,

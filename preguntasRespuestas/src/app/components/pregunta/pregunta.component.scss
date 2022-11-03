@@ -10,12 +10,28 @@
   }
 
   .correct{
-    color: #da2d2d;
+    color: #ffffff;
     font-size: 18px;
   }
 
   .incorrect{
-    color: #17a2b8;
+    color: #ffffff;
     font-size: 18px;
   }
+}
+
+
+.active-text-light{
+  background-color: #17a2b8;
+  color: white;
+}
+
+.list-group-item-success{
+  background-color: rgba(16, 198, 16, 0.713);
+  color: white;
+}
+
+.list-group-item-danger{
+  background-color: rgba(219, 8, 8, 0.713);
+  color: white;
 }

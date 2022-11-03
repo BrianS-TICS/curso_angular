@@ -1,11 +1,11 @@
 <h4 class="card-title">{{ obtenerPregunta() }}</h4>
 <ul class="list-group">
-  <li *ngFor="let respuesta of listPregunta[preguntaService.indexPregunta].respuestas" class="list-group-item d-flex justify-content-center gap-2 align-items-center">
+  <li (click)="respuestaSeleccionada(respuesta, i)" [ngClass]="AddClassOption(respuesta)" *ngFor="let respuesta of listPregunta[preguntaService.indexPregunta].respuestas; let i = index" class="list-group-item d-flex justify-content-center gap-2 align-items-center">
     {{respuesta.nombre}}
-    <span class="material-symbols-outlined incorrect">
+    <span *ngIf="iconIncorrecta(respuesta)" class="material-symbols-outlined incorrect">
       close
     </span>
-    <span class="material-symbols-outlined correct">
+    <span *ngIf="iconCorrecta(respuesta)" class="material-symbols-outlined correct">
       check
       </span>
   </li>
